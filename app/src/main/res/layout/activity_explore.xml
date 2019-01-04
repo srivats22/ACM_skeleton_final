@@ -10,5 +10,48 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/internships"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="143dp"
+            android:layout_marginLeft="143dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="141dp"
+            android:layout_marginRight="141dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/roboto"
+            android:text="Internships"
+            android:textColor="#000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/internships">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Software Engineering Intern,\nSummer 2019
+Due Date: December 14, 2018\nDescription: A 12-14 week paid\n internship that offers personal and \nprofessional development, an executive speaker series, and community-building. This program will give you an opportunity to work on complex computer science solutions, to develop scalable, distributed software systems, and also to collaborate on multitudes of smaller projects that have universal appeal - which requires research, awareness, interactivity, and the ability to ask the right questions."
+                android:textColor="#000"
+                android:textSize="20sp" />
+        </android.support.v7.widget.CardView>
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
