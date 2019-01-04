@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Membership">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="Learn how to become part of the ACM\nfamily"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:typeface="monospace"
+            app:fontFamily="@font/roboto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/benefits"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/title2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Benefits of ACM \n -Develop Skills\n - Internship Opportunities  \n- ACM mentorship programs  \n- Resume Workshops \n- Tutoring for CS classes  \n- Conference's and Tech companies field trips \n- Networking  \n- Volunteer Opportunity \n- Loyalty Card program"
+                android:textColor="#000"
+                app:fontFamily="@font/roboto" />
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:text="Basic Membership"
+            android:textColor="#000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
+            app:layout_constraintTop_toBottomOf="@id/benefits" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/pmembership"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title2">
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="5">
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dip"
+                        android:text="Cost"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+
+                    <TextView
+                        android:gravity="right"
+                        android:padding="3dip"
+                        android:text="$5"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dip"
+                        android:text="Benefits"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+
+                    <TextView
+                        android:gravity="left"
+                        android:padding="3dip"
+                        android:text="You will receive all\nthe benefits listed above"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+                </TableRow>
+            </TableLayout>
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/pmembership"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="Premium Membership"
+            android:textColor="#000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/explanation"
+            app:layout_constraintTop_toBottomOf="@id/cardView" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/explanation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/apply"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pmembership">
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="5">
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dip"
+                        android:text="Cost"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+
+                    <TextView
+                        android:gravity="right"
+                        android:padding="3dip"
+                        android:text="$10"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dip"
+                        android:text="Benefits"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+
+                    <TextView
+                        android:gravity="left"
+                        android:padding="3dip"
+                        android:text="You will receive all the benefits \nlisted above plus a card and \na graphic T-shirt"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+                </TableRow>
+            </TableLayout>
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/apply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="How to apply"
+            android:textColor="#000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView2"
+            app:layout_constraintTop_toBottomOf="@id/explanation" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/apply">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:text="Steps:\n 1) Choose a membership option\n 2) Pay either $5 or $10 using PayPal, Venmo or Google Pay\n 3) Email your invoice to acm.calstatela@gmail.com"
+                android:textColor="#000"
+                android:textSize="18sp" />
+        </android.support.v7.widget.CardView>
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:onClick="Gpay"
+            android:text="Gpay"
+            app:layout_constraintEnd_toStartOf="@+id/button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:onClick="paypal"
+            android:text="Paypal"
+            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintStart_toEndOf="@+id/button3"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:onClick="venmo"
+            android:text="Venmo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="(Please pay as a friend if using paypal)"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/roboto"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/button3" />
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

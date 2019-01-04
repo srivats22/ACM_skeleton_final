@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Calendar">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="View our upcoming events"
+            android:fontFamily="@font/roboto"
+            android:textColor="#000"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/jan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="January"
+            android:textColor="#000"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/janevent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/jan">
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="5">
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dip"
+                        android:text="Jan 22"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+
+                    <TextView
+                        android:gravity="left"
+                        android:padding="3dip"
+                        android:text="Start of Spring 2019"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dip"
+                        android:text="Jan 24"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+
+                    <TextView
+                        android:gravity="left"
+                        android:padding="3dip"
+                        android:text="First officers meeting"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dip"
+                        android:text="Jan 29"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+
+                    <TextView
+                        android:gravity="left"
+                        android:padding="3dip"
+                        android:text="First workshop(Look at projects \nto find where to meet)"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dip"
+                        android:text="Jan 31"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+
+                    <TextView
+                        android:gravity="left"
+                        android:padding="3dip"
+                        android:text="Second workshop(Look at projects \nto find where to meet)"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+                </TableRow>
+            </TableLayout>
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/feb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:fontFamily="@font/roboto"
+            android:text="February"
+            app:layout_constraintTop_toBottomOf="@id/janevent" />
+        <android.support.v7.widget.CardView
+            android:id="@+id/febevent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/feb">
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="5">
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dip"
+                        android:text="Feb 5"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+
+                    <TextView
+                        android:gravity="left"
+                        android:padding="3dip"
+                        android:text="Third workshop(Look at projects \nto find where to meet)"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dip"
+                        android:text="Feb 7"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+
+                    <TextView
+                        android:gravity="left"
+                        android:padding="3dip"
+                        android:text="Officers Meeting"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dip"
+                        android:text="Feb 12"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+
+                    <TextView
+                        android:gravity="left"
+                        android:padding="3dip"
+                        android:text="Board meeting"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:padding="3dip"
+                        android:text="Feb 14"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+
+                    <TextView
+                        android:gravity="left"
+                        android:padding="3dip"
+                        android:text="Officer meeting"
+                        android:textColor="#000"
+                        app:fontFamily="@font/roboto" />
+                </TableRow>
+            </TableLayout>
+        </android.support.v7.widget.CardView>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
