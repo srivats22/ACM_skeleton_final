@@ -5,128 +5,127 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OfficeHours">
+    tools:context=".Office">
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+        <TextView
+            android:id="@+id/officehours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/office"
-            app:layout_constraintBottom_toTopOf="@+id/title"
+            android:fontFamily="@font/roboto"
+            android:text="Office Hours"
+            android:textColor="#000"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/roboto"
-            android:gravity="center"
-            android:text="Office hours"
-            android:textColor="#000"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/explain"
-            app:layout_constraintTop_toBottomOf="@id/image" />
-
         <android.support.v7.widget.CardView
-            android:id="@+id/explain"
+            android:id="@+id/explain1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
             app:cardCornerRadius="10dp"
-            app:cardElevation="5dp"
-            app:layout_constraintBottom_toTopOf="@+id/gmail"
+            app:cardElevation="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title">
+            app:layout_constraintTop_toBottomOf="@+id/officehours">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/roboto"
                 android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:text="Our office is located at the\n ECST building at C-245.\nWe will be available from\n3:00PM to 4:00PM"
                 android:textColor="#000"
-                android:textSize="18sp" />
+                android:textSize="15sp" />
         </android.support.v7.widget.CardView>
 
-        <TextView
-            android:id="@+id/email"
+        <android.support.v7.widget.CardView
+            android:id="@+id/explain2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/roboto"
-            android:gravity="center"
-            android:text="Our email ID is: acm.calstatela@gmail.com acm.calstatela@gmail.com"
-            android:textColor="#000"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/gmail"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/explain" />
+            app:layout_constraintTop_toBottomOf="@id/explain1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:text="Can't make it to our office hours?\nWe can be reached at\nacm.calstatela@gmail.com"
+                android:textColor="#000"
+                android:textSize="15sp" />
+        </android.support.v7.widget.CardView>
 
         <Button
             android:id="@+id/gmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/roboto"
-            android:gravity="center"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
             android:onClick="gmail"
             android:text="Gmail"
-            android:textColor="#000"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/outlook"
+            app:layout_constraintEnd_toStartOf="@+id/button5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/email" />
+            app:layout_constraintTop_toBottomOf="@id/explain2" />
 
         <Button
-            android:id="@+id/outlook"
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="68dp"
+            android:layout_marginRight="68dp"
+            android:text="outlook"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/gmail"
+            app:layout_constraintTop_toBottomOf="@id/explain2" />
+
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
-            android:onClick="outlook"
-            android:text="Outlook"
+            android:src="@drawable/map"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/gmail"
-            app:layout_constraintTop_toBottomOf="@+id/email" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gmail" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
