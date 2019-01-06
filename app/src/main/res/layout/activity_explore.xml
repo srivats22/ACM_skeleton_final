@@ -32,7 +32,7 @@
         <android.support.v7.widget.CardView
             android:id="@+id/cardView6"
             android:layout_width="350dp"
-            android:layout_height="150dp"
+            android:layout_height="170dp"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
@@ -60,14 +60,16 @@
                 android:layout_marginLeft="140dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="40dp"
+                android:background="@color/colorPrimary"
                 android:text="More info" />
 
             <Button
                 android:onClick="googlebs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="110dp"
+                android:background="@color/colorPrimary"
                 android:text="Bachelor student" />
 
             <Button
@@ -75,7 +77,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="200dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="110dp"
+                android:background="@color/colorPrimary"
                 android:text="Master student" />
         </android.support.v7.widget.CardView>
 
@@ -106,8 +109,9 @@
                 android:onClick="shellapply"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="100dp"
+                android:layout_marginLeft="125dp"
                 android:layout_marginTop="60dp"
+                android:background="@color/colorPrimary"
                 android:text="View Application" />
         </android.support.v7.widget.CardView>
 

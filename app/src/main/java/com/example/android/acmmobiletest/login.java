@@ -19,4 +19,9 @@ public class login extends AppCompatActivity {
         Intent intent = new Intent(this, HomeScreen.class);
         startActivity(intent);
     }
+
+    public void createaccount(View view) {
+        Intent intent = new Intent(this, SignUp.class);
+        startActivity(intent);
+    }
 }

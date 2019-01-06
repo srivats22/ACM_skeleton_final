@@ -26,13 +26,14 @@
         <activity
             android:name=".HomeScreen"
             android:screenOrientation="portrait" />
-        <activity android:name=".Membership" />
-        <activity android:name=".Calendar" />
-        <activity android:name=".Projects" />
-        <activity android:name=".Tutoring" />
-        <activity android:name=".Office" />
-        <activity android:name=".Explore" />
-        <activity android:name=".About"></activity>
+        <activity android:name=".Membership" android:screenOrientation="portrait" />
+        <activity android:name=".Calendar" android:screenOrientation="portrait"/>
+        <activity android:name=".Projects" android:screenOrientation="portrait"/>
+        <activity android:name=".Tutoring" android:screenOrientation="portrait"/>
+        <activity android:name=".Office" android:screenOrientation="portrait"/>
+        <activity android:name=".Explore" android:screenOrientation="portrait"/>
+        <activity android:name=".About" android:screenOrientation="portrait"/>
+        <activity android:name=".SignUp" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
