@@ -39,10 +39,6 @@ import com.example.android.acmmobiletest.models.UserAccountSettings;
 import com.example.android.acmmobiletest.models.User;
 //import com.example.android.acmmobiletest.models.UserSettings;
 
-/**
- * Created by User on 6/26/2017.
- */
-
 public class FirebaseMethods {
 
     private static final String TAG = "FirebaseMethods";
@@ -71,249 +67,71 @@ public class FirebaseMethods {
         }
     }
 
-//    public void uploadNewPhoto(String photoType, final String caption,final int count, final String imgUrl,
-//                               Bitmap bm){
-//        Log.d(TAG, "uploadNewPhoto: attempting to upload new photo.");
-//
-//        FilePaths filePaths = new FilePaths();
-//        //case1) new photo
-//        if(photoType.equals(mContext.getString(R.string.new_photo))){
-//            Log.d(TAG, "uploadNewPhoto: uploading NEW photo.");
-//
-//            String user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
-//            StorageReference storageReference = mStorageReference
-//                    .child(filePaths.FIREBASE_IMAGE_STORAGE + "/" + user_id + "/photo" + (count + 1));
-//
-//            //convert image url to bitmap
-//            if(bm == null){
-//                bm = ImageManager.getBitmap(imgUrl);
-//            }
-//
-//            byte[] bytes = ImageManager.getBytesFromBitmap(bm, 100);
-//
-//            UploadTask uploadTask = null;
-//            uploadTask = storageReference.putBytes(bytes);
-//
-//            storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-//                @Override
-//                public void onSuccess(Uri uri) {
-//                    Uri firebaseUrl = uri;
-//
-//                    Toast.makeText(mContext, "photo upload success", Toast.LENGTH_SHORT).show();
-//
-//                    setProfilePhoto(firebaseUrl.toString());
-//
-//                    //add the new photo to 'photos' node and 'user_photos' node
-//                    addPhotoToDatabase(caption, firebaseUrl.toString());
-//
-//                    //navigate to the main feed so the user can see their photo
-//                    Intent intent = new Intent(mContext, HomeActivity.class);
-//                    mContext.startActivity(intent);
-//                }
-//            }).addOnFailureListener(new OnFailureListener() {
-//                @Override
-//                public void onFailure(@NonNull Exception e) {
-//                    Log.d(TAG, "onFailure: Photo upload failed.");
-//                    Toast.makeText(mContext, "Photo upload failed ", Toast.LENGTH_SHORT).show();
-//                }
-//            });
-//
-//
-//
-//        }
-//        //case new profile photo
-//        else if(photoType.equals(mContext.getString(R.string.profile_photo))){
-//            Log.d(TAG, "uploadNewPhoto: uploading new PROFILE photo");
-//
-//
-//            String user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
-//            StorageReference storageReference = mStorageReference
-//                    .child(filePaths.FIREBASE_IMAGE_STORAGE + "/" + user_id + "/profile_photo");
-//
-//            //convert image url to bitmap
-//            if(bm == null){
-//                bm = ImageManager.getBitmap(imgUrl);
-//            }
-//            byte[] bytes = ImageManager.getBytesFromBitmap(bm, 100);
-//
-//            storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-//                @Override
-//                public void onSuccess(Uri uri) {
-//                    Uri firebaseUrl = uri;
-//
-//                    Toast.makeText(mContext, "photo upload success", Toast.LENGTH_SHORT).show();
-//
-//                    setProfilePhoto(firebaseUrl.toString());
-//
-//                    ((AccountSettingsActivity)mContext).setViewPager(
-//                            ((AccountSettingsActivity)mContext).pagerAdapter
-//                                    .getFragmentNumber(mContext.getString(R.string.edit_profile_fragment))
-//                    );
-//                }
-//            }).addOnFailureListener(new OnFailureListener() {
-//                @Override
-//                public void onFailure(@NonNull Exception e) {
-//                    Log.d(TAG, "onFailure: Photo upload failed.");
-//                    Toast.makeText(mContext, "Photo upload failed ", Toast.LENGTH_SHORT).show();
-//                }
-//            });
-//
-//
-//        }
-//
-//    }
-//
-//    private void setProfilePhoto(String url){
-//        Log.d(TAG, "setProfilePhoto: setting new profile image: " + url);
-//
-//        myRef.child(mContext.getString(R.string.dbname_user_account_settings))
-//                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-//                .child(mContext.getString(R.string.profile_photo))
-//                .setValue(url);
-//    }
-//
-//    private String getTimestamp(){
-//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.CANADA);
-//        sdf.setTimeZone(TimeZone.getTimeZone("Canada/Pacific"));
-//        return sdf.format(new Date());
-//    }
-//
-//    private void addPhotoToDatabase(String caption, String url){
-//        Log.d(TAG, "addPhotoToDatabase: adding photo to database.");
-//
-//        String tags = StringManipulation.getTags(caption);
-//        String newPhotoKey = myRef.child(mContext.getString(R.string.dbname_photos)).push().getKey();
-//        Photo photo = new Photo();
-//        photo.setCaption(caption);
-//        photo.setDate_created(getTimestamp());
-//        photo.setImage_path(url);
-//        photo.setTags(tags);
-//        photo.setUser_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
-//        photo.setPhoto_id(newPhotoKey);
-//
-//        //insert into database
-//        myRef.child(mContext.getString(R.string.dbname_user_photos))
-//                .child(FirebaseAuth.getInstance().getCurrentUser()
-//                        .getUid()).child(newPhotoKey).setValue(photo);
-//        myRef.child(mContext.getString(R.string.dbname_photos)).child(newPhotoKey).setValue(photo);
-//
-//    }
-//
-//    public int getImageCount(DataSnapshot dataSnapshot){
-//        int count = 0;
-//        for(DataSnapshot ds: dataSnapshot
-//                .child(mContext.getString(R.string.dbname_user_photos))
-//                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-//                .getChildren()){
-//            count++;
-//        }
-//        return count;
-//    }
-//
-//    /**
-//     * Update 'user_account_settings' node for the current user
-//     * @param displayName
-//     * @param website
-//     * @param description
-//     * @param phoneNumber
-//     */
-//    public void updateUserAccountSettings(String displayName, String website, String description, long phoneNumber){
-//
-//        Log.d(TAG, "updateUserAccountSettings: updating user account settings.");
-//
-//        if(displayName != null){
-//            myRef.child(mContext.getString(R.string.dbname_user_account_settings))
-//                    .child(userID)
-//                    .child(mContext.getString(R.string.field_display_name))
-//                    .setValue(displayName);
-//        }
-//
-//
-//        if(website != null) {
-//            myRef.child(mContext.getString(R.string.dbname_user_account_settings))
-//                    .child(userID)
-//                    .child(mContext.getString(R.string.field_website))
-//                    .setValue(website);
-//        }
-//
-//        if(description != null) {
-//            myRef.child(mContext.getString(R.string.dbname_user_account_settings))
-//                    .child(userID)
-//                    .child(mContext.getString(R.string.field_description))
-//                    .setValue(description);
-//        }
-//
-//        if(phoneNumber != 0) {
-//            myRef.child(mContext.getString(R.string.dbname_user_account_settings))
-//                    .child(userID)
-//                    .child(mContext.getString(R.string.field_phone_number))
-//                    .setValue(phoneNumber);
-//        }
-//    }
-//
-//    /**
-//     * update username in the 'users' node and 'user_account_settings' node
-//     * @param username
-//     */
-//    public void updateUsername(String username){
-//        Log.d(TAG, "updateUsername: upadting username to: " + username);
-//
-//        myRef.child(mContext.getString(R.string.dbname_users))
-//                .child(userID)
-//                .child(mContext.getString(R.string.field_username))
-//                .setValue(username);
-//
-//        myRef.child(mContext.getString(R.string.dbname_user_account_settings))
-//                .child(userID)
-//                .child(mContext.getString(R.string.field_username))
-//                .setValue(username);
-//    }
-//
-//    /**
-//     * update the email in the 'user's' node
-//     * @param email
-//     */
-//    public void updateEmail(String email){
-//        Log.d(TAG, "updateEmail: upadting email to: " + email);
-//
-//        myRef.child(mContext.getString(R.string.dbname_users))
-//                .child(userID)
-//                .child(mContext.getString(R.string.field_email))
-//                .setValue(email);
-//
-//    }
+    private void setProfilePhoto(String url){
+        Log.d(TAG, "setProfilePhoto: setting new profile image: " + url);
+
+        myRef.child(mContext.getString(R.string.skeleton_user_account_settings))
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child(mContext.getString(R.string.profile_photo))
+                .setValue(url);
+    }
+
+    private String getTimestamp(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.CANADA);
+        sdf.setTimeZone(TimeZone.getTimeZone("Canada/Pacific"));
+        return sdf.format(new Date());
+    }
 
     /**
-     * Register a new email and password to Firebase Authentication
-     * @param email
-     * @param password
+     * update username in the 'users' node and 'user_account_settings' node
      * @param username
      */
-    public void registerNewEmail(final String email, String password, final String username){
+    public void updateUsername(String username){
+        Log.d(TAG, "updateUsername: upadting username to: " + username);
+
+        myRef.child(mContext.getString(R.string.skeleton_users))
+                .child(userID)
+                .child(mContext.getString(R.string.username))
+                .setValue(username);
+
+        myRef.child(mContext.getString(R.string.skeleton_user_account_settings))
+                .child(userID)
+                .child(mContext.getString(R.string.username))
+                .setValue(username);
+    }
+
+    /**
+     * update the email in the 'user's' node
+     * @param email
+     */
+    public void updateEmail(String email){
+        Log.d(TAG, "updateEmail: upadting email to: " + email);
+
+        myRef.child(mContext.getString(R.string.skeleton_users))
+                .child(userID)
+                .child(mContext.getString(R.string.email))
+                .setValue(email);
+
+    }
+
+    public void registerNewEmail(final String email, String password, final String username) {
         mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
-
-                        // If sign in fails, display a message to the user. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
-                        if (!task.isSuccessful()) {
-                            Toast.makeText(mContext, R.string.auth_failed,
-                                    Toast.LENGTH_SHORT).show();
-
-                        }
-                        else if(task.isSuccessful()){
-                            //send verificaton email
-                            sendVerificationEmail();
-
-                            userID = mAuth.getCurrentUser().getUid();
-                            Log.d(TAG, "onComplete: Authstate changed: " + userID);
-                        }
-
-                    }
-                });
+        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d(TAG, "createUserWithEmail:success");
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    userID = mAuth.getCurrentUser().getUid();
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                    Toast.makeText(mContext, R.string.auth_failed,
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     public void sendVerificationEmail(){
@@ -334,33 +152,25 @@ public class FirebaseMethods {
         }
     }
 
-    /**
-     * Add information to the users nodes
-     * Add information to the user_account_settings node
-     * @param email
-     * @param username
-     * @param description
-     * @param profile_photo
-     */
-    public void addNewUser(String email, String username, String description, String profile_photo){
-        User user = new User( userID,  1,  email,  username);
+    public void addNewUser(String email, String username, String description, String profile_picture){
+
+        User user = new User(userID, 1, email, username);
 
         myRef.child(mContext.getString(R.string.skeleton_users))
                 .child(userID)
                 .setValue(user);
 
+
         UserAccountSettings settings = new UserAccountSettings(
                 description,
                 username,
-                profile_photo,
+                profile_picture,
                 username,
-                userID
-        );
+                userID);
 
         myRef.child(mContext.getString(R.string.skeleton_user_account_settings))
                 .child(userID)
                 .setValue(settings);
-
     }
 
 //
@@ -467,47 +277,3 @@ public class FirebaseMethods {
 //    }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
