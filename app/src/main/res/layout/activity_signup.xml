@@ -25,7 +25,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textview1"
+            android:id="@+id/register_username_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -35,16 +35,51 @@
             android:layout_marginRight="293dp"
             android:layout_marginBottom="5dp"
             android:fontFamily="@font/roboto"
-            android:text="Email ID:"
+            android:text="Username:"
             android:textColor="#000"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/editText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/logo" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/register_username"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="114dp"
+            android:layout_marginRight="114dp"
+            android:fontFamily="@font/roboto"
+            android:hint="Username"
+            android:inputType="text"
+            android:textColor="#000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/register_username_view" />
+
+        <TextView
+            android:id="@+id/register_email_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="293dp"
+            android:layout_marginRight="293dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/roboto"
+            android:text="Email:"
+            android:textColor="#000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/register_username" />
+
+        <EditText
+            android:id="@+id/register_email"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -59,10 +94,10 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textview1" />
+            app:layout_constraintTop_toBottomOf="@id/register_email_view" />
 
         <TextView
-            android:id="@+id/textview2"
+            android:id="@+id/register_password_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -75,14 +110,13 @@
             android:text="Password"
             android:textColor="#000"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editText"
+            app:layout_constraintTop_toBottomOf="@id/register_email"
             app:layout_constraintVertical_chainStyle="spread_inside" />
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/register_password"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -93,15 +127,15 @@
             android:layout_marginBottom="5dp"
             android:fontFamily="@font/roboto"
             android:hint="Password"
+            android:inputType="textPassword"
             android:textColor="#000"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/textview3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textview2" />
+            app:layout_constraintTop_toBottomOf="@id/register_password_view" />
 
         <TextView
-            android:id="@+id/textview3"
+            android:id="@+id/register_password_confirm_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -114,13 +148,12 @@
             android:text="Re-type Password"
             android:textColor="#000"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/repwsd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/password" />
+            app:layout_constraintTop_toBottomOf="@id/register_password" />
 
         <EditText
-            android:id="@+id/repwsd"
+            android:id="@+id/register_password_confirm"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -131,15 +164,15 @@
             android:layout_marginBottom="5dp"
             android:fontFamily="@font/roboto"
             android:hint="Re-enter password"
+            android:inputType="textPassword"
             android:textColor="#000"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/button6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textview3" />
+            app:layout_constraintTop_toBottomOf="@id/register_password_confirm_view" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/create_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -154,6 +187,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/repwsd" />
+            app:layout_constraintTop_toBottomOf="@id/register_password_confirm" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

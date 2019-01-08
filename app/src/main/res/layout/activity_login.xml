@@ -2,10 +2,8 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".login">
+    android:layout_height="match_parent">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -26,82 +24,81 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textview"
+            android:id="@+id/login_email_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="244dp"
-            android:layout_marginRight="244dp"
+            android:layout_marginEnd="293dp"
+            android:layout_marginRight="293dp"
             android:layout_marginBottom="5dp"
-            android:text="User Name"
+            android:fontFamily="@font/roboto"
+            android:text="Email:"
             android:textColor="#000"
             android:textSize="18sp"
-            app:fontFamily="@font/roboto"
-            app:layout_constraintBottom_toTopOf="@+id/username"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/image" />
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/login_email"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="84dp"
-            android:layout_marginRight="84dp"
-            android:layout_marginBottom="9dp"
+            android:layout_marginEnd="114dp"
+            android:layout_marginRight="114dp"
             android:fontFamily="@font/roboto"
-            android:hint="User name"
-            android:inputType="textPersonName"
+            android:hint="Email"
+            android:inputType="text"
             android:textColor="#000"
-            app:layout_constraintBottom_toTopOf="@+id/textview1"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textview" />
+            app:layout_constraintTop_toBottomOf="@id/login_email_view" />
 
         <TextView
-            android:id="@+id/textview1"
+            android:id="@+id/login_password_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="253dp"
-            android:layout_marginRight="253dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="283dp"
+            android:layout_marginRight="283dp"
             android:layout_marginBottom="5dp"
             android:fontFamily="@font/roboto"
             android:text="Password"
             android:textColor="#000"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/username" />
+            app:layout_constraintTop_toBottomOf="@id/login_email"
+            app:layout_constraintVertical_chainStyle="spread_inside" />
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/login_password"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="84dp"
-            android:layout_marginRight="84dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="114dp"
+            android:layout_marginRight="114dp"
+            android:layout_marginBottom="5dp"
             android:fontFamily="@font/roboto"
             android:hint="Password"
+            android:inputType="textPassword"
             android:textColor="#000"
-            app:layout_constraintBottom_toTopOf="@+id/button"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textview1" />
+            app:layout_constraintTop_toBottomOf="@id/login_password_view" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/login_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -112,17 +109,14 @@
             android:layout_marginBottom="10dp"
             android:background="@color/colorPrimary"
             android:fontFamily="@font/roboto"
-            android:onClick="login"
             android:text="Login"
             android:textColor="#000"
-            app:layout_constraintBottom_toTopOf="@+id/button7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/password" />
+            app:layout_constraintTop_toBottomOf="@id/login_password" />
 
         <Button
-            android:id="@+id/button7"
-            android:onClick="createaccount"
+            android:id="@+id/signup_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -132,11 +126,11 @@
             android:layout_marginRight="50dp"
             android:layout_marginBottom="5dp"
             android:background="@color/colorPrimary"
-            android:text="Create Account"
+            android:text="Sign Up"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button" />
+            app:layout_constraintTop_toBottomOf="@id/login_button" />
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>

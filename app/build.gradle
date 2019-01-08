@@ -26,8 +26,17 @@ dependencies {
     implementation 'com.android.support:cardview-v7:28.0.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
 
-    //Firebase
-    implementation 'com.google.firebase:firebase-core:16.0.1'
+    //firebase authentication
+    implementation 'com.google.firebase:firebase-auth:16.0.5'
+
+    //firebase database
+    implementation 'com.google.firebase:firebase-database:16.0.5'
+
+    //firebase core
+    implementation 'com.google.firebase:firebase-core:16.0.5'
+
+    //firebase storage
+    implementation 'com.google.firebase:firebase-storage:16.0.5'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
