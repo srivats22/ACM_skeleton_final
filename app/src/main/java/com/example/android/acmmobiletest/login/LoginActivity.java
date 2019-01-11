@@ -2,7 +2,6 @@ package com.example.android.acmmobiletest.login;
 
 import android.content.Context;
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -24,8 +23,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import org.w3c.dom.Text;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -52,10 +49,7 @@ public class LoginActivity extends AppCompatActivity {
 
 //        mPleaseWait.setVisibility(View.GONE);
 //        mProgessBar.setVisibility(View.GONE);
-
-        setupFirebaseAuth();
         init();
-
     }
 
     private boolean isStringNull(String string){
@@ -72,8 +66,19 @@ public class LoginActivity extends AppCompatActivity {
     */
 
     private void init(){
+        setupFirebaseAuth();
 
-        //init button for logging in
+        /*
+            If the User is logged in then navigate to home activity
+        */
+        if (mAuth.getCurrentUser() != null) {
+            Intent intent = new Intent(LoginActivity.this, HomeScreen.class);
+            Log.d(TAG, "signInWithEmail: redirecting to HomeActivity");
+            startActivity(intent);
+            finish();
+        }
+
+        //initiallize button for logging in
         Button btnLogin = (Button) findViewById(R.id.login_button);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,17 +99,19 @@ public class LoginActivity extends AppCompatActivity {
                     .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            Log.d(TAG, "signInWithEmail: success");
+                            FirebaseUser user = mAuth.getCurrentUser();
 
                             if (task.isSuccessful()) {
-                                // Sign in success, update UI with the signed-in user's information
-                                FirebaseUser user = mAuth.getCurrentUser();
-
-//                                        mProgessBar.setVisibility(View.GONE);
-//                                        mPleaseWait.setVisibility(View.GONE);
-                                Toast.makeText(mContext, R.string.auth_success,
-                                        Toast.LENGTH_SHORT).show();
-                                Log.d(TAG, "signInWithEmail: successful login ");
+                                if(user.isEmailVerified()){
+                                    Log.d(TAG, "onComplete: success. email is verified.");
+                                    Intent intent = new Intent(LoginActivity.this, HomeScreen.class);
+                                    startActivity(intent);
+                                }else{
+                                    Toast.makeText(mContext, "Email is not verified \n check your email inbox.", Toast.LENGTH_SHORT).show();
+//                                                mProgressBar.setVisibility(View.GONE);
+//                                                mPleaseWait.setVisibility(View.GONE);
+                                    mAuth.signOut();
+                                }
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.w(TAG, "signInWithEmail: login failed", task.getException());
@@ -112,15 +119,6 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.LENGTH_SHORT).show();
 //                                        mProgessBar.setVisibility(View.GONE);
 //                                        mPleaseWait.setVisibility(View.GONE);
-                            }
-                            /*
-                                If the User is logged in then navigate to home activity
-                            */
-                            if (mAuth.getCurrentUser() != null) {
-                                Intent intent = new Intent(LoginActivity.this, HomeScreen.class);
-                                Log.d(TAG, "signInWithEmail: redirecting to HomeActivity");
-                                startActivity(intent);
-                                finish();
                             }
                         }
                     });
@@ -136,9 +134,6 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        /*
-        If the User is logged in then navigate to home activity
-        */
     }
 
 
@@ -154,14 +149,14 @@ public class LoginActivity extends AppCompatActivity {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
 
                 if (user != null){
-                    Log.d(TAG, "onAuthStateChanged: signed_in");
-                } else {
-                    Log.d(TAG, "onAuthStateChanged: signed_out");
+                    Log.d(TAG, "onAuthStateChanged: signed_in, redirecting to HomeScreen");
+                    Intent intent = new Intent(LoginActivity.this, HomeScreen.class);
+                    Log.d(TAG, "signInWithEmail: redirecting to HomeActivity");
+                    startActivity(intent);
+                    finish();
                 }
-
             }
         };
-
     }
 
 
@@ -169,9 +164,7 @@ public class LoginActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
-        // Check if user is signed in (non-null) and update UI accordingly.
     }
-
 
     @Override
     public void onStop(){
